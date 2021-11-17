@@ -1,0 +1,11 @@
+{
+    "imageActionName": "uploadimage",
+    "imageFieldName": "upfile",
+    "imageUrlPrefix": "",
+    "scrawlActionName": "uploadscrawl",
+    "scrawlFieldName": "upfilebase64",
+    "scrawlUrlPrefix": "",
+    "snapscreenActionName": "uploadimage",
+    "snapscreenFieldName": "upfile",
+    "snapscreenUrlPrefix": ""
+}

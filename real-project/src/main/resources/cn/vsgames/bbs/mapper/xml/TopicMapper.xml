@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.vsgames.bbs.mapper.TopicMapper">
+
+	<select id="getTopicList" resultType="cn.vsgames.bbs.domain.Topic">
+		select t.id,t.title,t.top,t.section_top as sectionTop,t.high_quality as highQuality,t.image,t.reply_count as replyCount,
+		t.user_id as userId,t.last_reply_time as lastReplyTime,s.name as sectionName,
+		t.section_id as sectionId,u1.username,u1.avatar,u2.username as lastReplyUsername,
+		t.last_reply_user_id as lastReplyUserId,t.topic_type_id as topicTypeId,p.name as topicTypeName
+		<if test="sectionId != null">
+		,true as selectSection
+		</if>
+		from t_topic t inner join t_user u1 on t.user_id = u1.id 
+		inner join t_user u2 on t.last_reply_user_id = u2.id
+		inner join t_section s on s.id = t.section_id
+		left join t_topic_type p on p.id = t.topic_type_id
+		where t.del_status = 0
+		<if test="sectionId != null">
+		and t.section_id = #{sectionId}
+		</if>
+		<if test="key != null">
+			<bind name="like" value="'%' + key + '%'" />
+			and t.title like #{like}
+		</if>
+		order by t.top desc,
+		<if test="sectionId != null">
+		t.section_top desc,
+		</if>
+		t.last_reply_time desc
+		limit #{startIndex},#{pageSize}
+	</select>
+	
+	<select id="getTopicCount" resultType="int">
+		select count(*) from t_topic where del_status = 0
+		<if test="sectionId != null">
+		and section_id = #{sectionId}
+		</if>
+		<if test="key != null">
+			<bind name="like" value="'%' + key + '%'" />
+			and title like #{like}
+		</if>
+	</select>
+	
+	<select id="getReplyCount" resultType="int">
+		select count(*) from t_reply where del_status=0
+		<if test="topicId != null">
+		and topic_id=#{topicId}
+		</if>
+	</select>
+	
+	<insert id="insertTopic" useGeneratedKeys="true" keyProperty="id">
+	insert into t_topic (title,section_id,user_id,last_reply_time,last_reply_user_id,create_time,image,topic_type_id)
+	values (#{title},#{sectionId},#{userId},now(),#{userId},now(),#{image},#{topicTypeId})
+	</insert>
+	
+	<insert id="insertReply" useGeneratedKeys="true" keyProperty="id">
+	insert into t_reply (content,reply_time,user_id,topic_id,floor) values
+	(#{content},now(),#{userId},#{topicId},
+	(select max(floor) from t_reply r where topic_id = #{topicId}) + 1)
+	</insert>
+	
+	<insert id="insertFirstReply" useGeneratedKeys="true" keyProperty="id">
+	insert into t_reply (content,reply_time,user_id,topic_id,floor) values
+	(#{content},now(),#{userId},#{topicId},1)
+	</insert>
+	
+</mapper>

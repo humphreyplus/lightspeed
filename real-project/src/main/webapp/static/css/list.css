@@ -1,0 +1,164 @@
+
+.btn-new-topic {
+	float: right;
+	display: block;
+	background-color: #5cb85c;
+	color: white;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.btn-new-topic:hover {
+	background-color: #449d44;
+}
+
+.topic-sections {
+	border-bottom: 1px solid #ddd;
+	height: 40px;
+	padding-left: 15px;
+}
+.topic-sections li {
+	float: left;
+	line-height: 40px;
+	width: 60px;
+	text-align: center;
+}
+.topic-sections li a {
+	display: block;
+	text-align: center;
+	width: 60px;
+}
+.topic-sections li.section-selected {
+	background-color: #449d44;
+	color: white;
+}
+.topic-sections li a:hover {
+	background-color: #f7f7f7;
+}
+
+.topic {
+	border-bottom: 1px solid #ddd;
+}
+.topic:hover {
+	background-color: #f5f5f5;
+}
+.topic-user {
+	float: left;
+	padding: 10px;
+}
+.topic-user-avatar {
+	width: 52px;
+	height: 52px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	display: block;
+}
+.topic-user-avatar img {
+	width: 48px;
+	height: 48px;
+	padding: 2px;
+	border-radius: 4px;
+}
+.topic-right-content {
+	margin-left: 80px;
+	min-height: 55px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 15px;
+}
+.topic-reply-count {
+	float: right;
+	background-color: #449d44;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+}
+.topic-title {
+	width: 590px;
+	font-weight: bold;
+}
+.topic-title a:hover {
+	color: #449d44;
+}
+.topic-importance {
+	font-size: 12px;
+	font-weight: normal;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+}
+.preview-img {
+	padding-top: 10px;
+	min-height: 10px;
+	text-align: center;
+}
+.preview-img img {
+	max-width: 600px;
+	cursor: url("../img/cur_zout.cur"),pointer;
+}
+.preview-img-small {
+	text-align: left;
+}
+.preview-img-small img {
+	max-height: 100px;
+	max-width: 100px;
+	cursor: url("../img/cur_zin.cur"),pointer;
+}
+.topic-bottom {
+	font-size: 12px;
+	color: #bbb;
+	padding-top: 10px;
+}
+.topic-bottom a {
+	font-size: 12px;
+	color: #666;
+}
+.topic-bottom a:hover {
+	text-decoration: underline;
+}
+a.topic-section {
+	background-color: #bbb;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+	color: white;
+}
+a.topic-section:hover {
+	background-color: #449d44;
+	color: white;
+	text-decoration: none;
+}
+
+
+.pager {
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.pager span {
+	border: 1px solid #aaa;
+	color: #666;
+	padding: 2px 8px;
+	border-radius: 3px;
+}
+.pager a {
+	border: 1px solid #aaa;
+	color: #666;
+	padding: 2px 8px;
+	border-radius: 3px;
+}
+.pager a:hover {
+	border: 1px solid #449d44;
+	background-color: #449d44;
+	color: white;
+}
+.pager span.pager-selected {
+	border: 1px solid #449d44;
+	background-color: #449d44;
+	color: white;
+}

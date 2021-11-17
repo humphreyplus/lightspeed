@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 自动装配包中的类，过滤掉带有@Controller注解的类 -->
+	<context:component-scan base-package="cn.vsgames.bbs">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- MyBatis数据库连接配置 -->
+	<bean name="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/lightspeed_db?characterEncoding=UTF-8" />
+		<property name="username" value="root" />
+		<property name="password" value="YOUR_PASSWORD" />
+	</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:cn/vsgames/bbs/mapper/xml/*.xml" />
+	</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="cn.vsgames.bbs.mapper" />
+	</bean>
+	
+	<!-- 数据库事务@Transactional注解启用 -->
+	<tx:annotation-driven transaction-manager="txManager"/>
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+	
+	<!-- 邮件配置 -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="protocol" value="smtp" />
+	    <property name="host" value="smtp.lightspeed.com" />
+	    <property name="username" value="webmaster@lightspeed.com" />
+	    <property name="password" value="" />
+	</bean>
+	<bean id="velocityEngine" class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+        <property name="velocityProperties">
+            <value>
+                resource.loader=class
+                class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+            </value>
+        </property>
+    </bean>
+    
+    <!-- 七牛云配置 -->
+    <bean id="qiniuService" class="cn.vsgames.bbs.service.QiniuService">
+		<property name="accessKey" value="" />
+		<property name="secretKey" value="" />
+		<property name="bucket" value="lightspeed" />
+		<property name="httpBase" value="http://66.42.98.112"></property>
+	</bean>
+	
+	<!-- Web应用配置项 -->
+	<bean class="cn.vsgames.bbs.init.ApplicationProperties">
+		<property name="websiteName" value="光速论坛" />
+		<property name="websiteBase" value="http://66.42.98.112/bbs/" />
+		
+		<property name="pageSize" value="25" />
+		
+		<property name="staticFileUrl" value="http://66.42.98.112/bbs/"/>
+		
+		<!-- 头像上传的目录及HTTP地址前缀（剪切前） -->
+		<property name="avatarUploadTempFolder" value="http://66.42.98.112/bbs/vsgamesimgs/avatartemp" />
+		<property name="avatarUploadTempHttpUrl" value="http://66.42.98.112/bbs/vsgamesimgs/avatartemp" />
+		
+		<!-- 头像存储的目录及HTTP地址前缀（剪切后） -->
+		<property name="avatarStorage" value="0" /> <!-- 0：本地存储 1：七牛云存储 -->
+		<property name="avatarFolder" value="/avatar" />
+		<!-- avatarStorage为0时有效 -->
+		<property name="avatarHttpUrl" value="http://66.42.98.112/bbs/vsgamesimgs/avatar" />
+		<!-- avatarStorage为1时有效 -->
+		<property name="avatarQiniuPath" value="avatar" />
+		
+		<!-- 注册用户的默认头像地址 -->
+		<property name="defaultAvatarHttpUrl" value="http://66.42.98.112/bbs/default-avatar.gif" />
+		
+		<!-- 图片上传的目录及HTTP地址前缀 -->
+		<property name="imguploadStorage" value="1" /> <!-- 0：本地存储 1：七牛云存储 -->
+		<property name="imguploadFolder" value="/upload" />
+		<!-- avatarStorage为0时有效 -->
+		<property name="imguploadHttpUrl" value="http://66.42.98.112/bbs/vsgamesimgs/upload" />
+		<!-- avatarStorage为1时有效 -->
+		<property name="imguploadQiniuPath" value="upload" />
+	</bean>
+
+</beans>

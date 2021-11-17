@@ -1,0 +1,120 @@
+.user-basic {
+	padding: 20px;
+}
+.avatar {
+	width: 104px;
+	height: 104px;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	float: left;
+	margin: 5px;
+}
+.avatar img {
+	width: 100px;
+	height: 100px;
+	border-radius: 8px;
+	padding: 2px;
+}
+.basic-info {
+	margin-left: 120px;
+	height: 120px;
+}
+.username {
+	font-size: 24px;
+	font-weight: bold;
+	height: 36px;
+}
+.user-info {
+	color: #999;
+	line-height: 26px;
+}
+.user-info span {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	padding-right: 20px;
+}
+.select-gw2homeland {
+	width: 85px;
+}
+
+.user-gw2 {
+	padding: 20px;
+}
+.title {
+	font-size: 22px;
+	font-weight: bold;
+	height: 45px;
+}
+
+.set-avatar {
+	padding: 20px;
+}
+.set-avatar .avatar-setter {
+	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.set-avatar .avatar-preview {
+	background-color: #ccc;
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	border: 2px solid #ccc;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.avatar-submit {
+	background-color: #5cb85c;
+	color: white;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.avatar-submit:hover {
+	background-color: #449d44;
+}
+
+.list {
+	padding: 20px;
+}
+
+.list li {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	color: #999;
+}
+.list li a {
+	color: #333;
+}
+.list li a:hover {
+	text-decoration: underline;
+}
+
+
+.mynav {
+	height: 40px;
+	background-color: #5cb85c;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.mynav a {
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	width: 120px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+.mynav a:hover {
+	background-color: #449d44;
+}
+.mynav a.mynav-selected {
+	background-color: #449d44;
+}

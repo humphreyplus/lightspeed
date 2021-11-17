@@ -1,0 +1,58 @@
+.plugin-act img {
+	max-width: 220px;
+}
+
+.plugin-hot li {
+	padding: 10px 5px;
+	border-top: 1px solid #ddd;
+}
+.plugin-hot li:hover {
+	background-color: #f5f5f5;
+}
+.plugin-hot a {
+	display: block;
+	margin-right: 40px;
+}
+.plugin-hot a:hover {
+	color: #449d44;
+}
+.plugin-hot span {
+	float: right;
+	background-color: #449d44;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+}
+.plugin-hot .p-content {
+	padding: 0px;
+	padding-bottom: 5px;
+}
+.plugin-hot .p-header {
+	border-bottom: 0px;
+}
+
+
+.plugin-statistics p {
+	line-height: 26px;
+	padding-left: 5px;
+}
+.plugin-statistics p span {
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.right-totop {
+	width: 48px;
+	height: 49px;
+	background-image: url("../img/btn-top.png");
+	background-position: left;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	border-radius: 4px;
+	position: fixed;
+	bottom: 140px;
+	display: none;
+}
+.right-totop:hover {
+	background-position: right;
+}

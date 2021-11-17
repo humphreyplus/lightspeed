@@ -1,0 +1,240 @@
+.btn-new-topic {
+	float: right;
+	display: block;
+	background-color: #5cb85c;
+	color: white;
+	width: 130px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+.btn-new-topic:hover {
+	background-color: #449d44;
+}
+
+.topic-sections {
+	border-bottom: 1px solid #ddd;
+	height: 40px;
+	padding-left: 15px;
+}
+.topic-sections li {
+	float: left;
+	line-height: 40px;
+	width: 60px;
+	text-align: center;
+}
+.topic-sections li a {
+	display: block;
+	text-align: center;
+	width: 60px;
+}
+.topic-sections li.section-selected {
+	background-color: #449d44;
+	color: white;
+}
+.topic-sections li a:hover {
+	background-color: #f7f7f7;
+}
+.topic-sections li.section-selected a {
+	color: white;
+}
+.topic-sections li.section-selected a:hover {
+	background-color: #449d44;
+}
+
+.topic-title {
+	border-bottom: 1px solid #ddd;
+	padding: 10px 15px;
+}
+.topic-title>div {
+	width: 700px;
+	font-weight: normal;
+}
+.topic-title h1 {
+	font-size: 16px;
+	display: inline;
+}
+.topic-title a {
+	margin-left: 5px;
+}
+.topic-reply-count {
+	float: right;
+	background-color: #449d44;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+}
+.topic-importance {
+	font-size: 12px;
+	font-weight: normal;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+}
+
+.reply-floor {
+	border-bottom: 1px solid #ddd;
+	background-color: #fafafa;
+}
+.reply-user-info {
+	width: 120px;
+	float: left;
+}
+.reply-user-info.reply-louzhu {
+	background-image: url("../img/icon-louzhu.png");
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+.reply-user-avatar {
+	width: 84px;
+	height: 84px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	display: block;
+}
+.reply-user-avatar img {
+	width: 80px;
+	height: 80px;
+	padding: 2px;
+	border-radius: 4px;
+}
+.reply-user-name {
+	text-align: center;
+	padding-top: 5px;
+}
+.reply-user-name a:hover {
+	color: #449d44;
+}
+.reply-main {
+	margin-left: 120px;
+	background-color: white;
+}
+.reply-content {
+	padding: 15px;
+	min-height: 100px;
+	word-break: break-all;
+	overflow: hidden;
+	line-height: 2;
+}
+.reply-content * {
+	max-width: 610px;
+}
+.reply-content a {
+	color: #449d44;
+}
+.reply-bottom {
+	text-align: right;
+	padding-right: 15px;
+	padding-bottom: 4px;
+	font-size: 13px;
+	color: #888;
+}
+.reply-bottom span {
+	background-color: #999;
+	color: white;
+	padding: 0px 4px;
+	border-radius: 5px;
+}
+.reply-bottom a {
+	color: #888;
+}
+.reply-bottom a:hover {
+	color: #449d44;
+}
+.reply-update-time {
+	text-align: center;
+	height: 30px;
+	padding-top: 10px;
+}
+.reply-update-time span {
+	font-size: 12px;
+	background-color: #999;
+	border-radius: 5px;
+	padding: 0px 4px;
+	color: white;
+}
+.reply-edit {
+	text-align: right;
+	padding-right: 15px;
+}
+.reply-edit a {
+	color: #888;
+	margin-left: 10px;
+}
+.reply-edit a:hover {
+	color: #449d44;
+}
+
+
+.pager {
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.pager span {
+	border: 1px solid #aaa;
+	color: #666;
+	padding: 2px 8px;
+	border-radius: 3px;
+}
+.pager a {
+	border: 1px solid #aaa;
+	color: #666;
+	padding: 2px 8px;
+	border-radius: 3px;
+}
+.pager a:hover {
+	border: 1px solid #449d44;
+	background-color: #449d44;
+	color: white;
+}
+.pager span.pager-selected {
+	border: 1px solid #449d44;
+	background-color: #449d44;
+	color: white;
+}
+
+.reply-textarea {
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+.reply-btn {
+	width: 130px;
+	height: 35px;
+	line-height: 35px;
+	color: white;
+	background-color: #5cb85c;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 5px;
+	margin-top: 15px;
+}
+.reply-btn.reply-btn-enable {
+	cursor: pointer;
+	background-color: #5cb85c;
+}
+.reply-btn.reply-btn-enable:hover {
+	background-color: #449d44;
+}
+.reply-tologin {
+	height: 180px;
+	line-height: 180px;
+	text-align: center;
+	border: 1px solid #ccc;
+	background-color: #eee;
+	color: #aaa;
+	width: 726px;
+}
+.reply-tologin a {
+	color: #666;
+}
+.reply-tologin a:hover {
+	text-decoration: underline;
+}

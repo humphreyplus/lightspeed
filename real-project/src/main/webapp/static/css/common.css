@@ -1,0 +1,151 @@
+body {
+	font-size: 14px;
+	font-family: "Microsoft YaHei";
+	color: #333;
+}
+body,p,h1,h2,h3 {
+	margin: 0px;
+	padding: 0px;
+}
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	text-decoration: none;
+	outline: none;
+	color: #333;
+}
+img {
+	border-width: 0px;
+}
+
+#bg {
+	background-image: url("http://7xi3wi.com1.z0.glb.clouddn.com/back/main-back-0004.jpg");
+	background-position: top;
+	background-repeat: no-repeat;
+	background-color: #b5aeb5;
+	min-width: 1000px;
+}
+#main {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#content {
+	margin-right: 240px;
+	background-color: white;
+	border-radius: 10px;
+}
+#content.full-content {
+	margin-right: 0px;
+	padding: 20px;
+	min-height: 300px;
+}
+#header {
+	min-width: 1000px;
+	padding-top: 5px;
+	padding-bottom: 1px;
+	background-color: #eee;
+	min-width: 100px;
+	background-image: url("../img/bg-header.png");
+	background-position: center;
+}
+.header-center {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#header-right {
+	float: right;
+	padding-top: 3px;
+}
+#header-right a {
+	margin-left: 10px;
+}
+#header-right a span {
+	color: red;
+}
+#header-right a:hover {
+	text-decoration: underline;
+}
+#header-right img {
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+}
+#footer {
+	text-align: center;
+	clear: both;
+	color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#footer a {
+	color: white;
+}
+#footer a:hover {
+	text-decoration: underline;
+}
+
+.right-panel {
+	float: right;
+	width: 230px;
+}
+.plugin-panel {
+	background-color: white;
+	border-radius: 5px;
+	margin-bottom: 15px;
+}
+.p-header {
+	border-bottom: 1px solid #ddd;
+	padding: 5px;
+}
+.p-content {
+	padding: 5px;
+}
+
+
+#top-logo {
+	height: 150px;
+	background-image: url("../img/bg-top-logo.png");
+	background-position: left;
+	background-repeat: no-repeat;
+}
+#top-logo a {
+	height: 150px;
+	width: 500px;
+	display: block;
+}
+
+
+
+.content-only-text {
+	padding: 100px 170px;
+	line-height: 30px;
+}
+.content-only-text a{
+	text-decoration: underline;
+}
+.content-only-text-warning {
+	background-image: url("../img/icon-warning.png");
+	background-repeat: no-repeat;
+	background-position: 50px 65px;
+}
+
+/* public class */
+.public-btn {
+	background-color: #5cb85c;
+	color: white;
+	border: 0;
+	cursor: pointer;
+	outline: none;
+}
+.public-btn:hover {
+	background-color: #449d44;
+}
+a.public-btn,span.public-btn {
+	padding: 2px 12px;
+	border-radius: 4px;
+}

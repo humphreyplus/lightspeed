@@ -1,0 +1,96 @@
+.message-top-line {
+	border-bottom: 1px solid #ddd;
+	height: 35px;
+	padding-left: 8px;
+	padding-right: 8px;
+	line-height: 35px;
+}
+.message-top-line a {
+	float: right;
+	background-color: #5cb85c;
+	color: white;
+	border-radius: 5px;
+	padding: 5px 15px;
+	line-height: normal;
+	margin-top: 2px;
+}
+.message-top-line a:hover {
+	background-color: #449d44;
+}
+
+.message-list {
+	width: 280px;
+	float: left;
+	background-color: #eee;
+}
+.message-list ul {
+	height: 400px;
+}
+.message-list li {
+	height: 39px;
+	line-height: 39px;
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	cursor: pointer;
+	font-size: 12px;
+}
+.message-list li span {
+	float: right;
+	margin-right: 4px;
+	color: #888;
+	font-weight: normal;
+}
+.message-unread {
+	font-weight: bold;
+}
+li.message-selected {
+	background-color: white;
+	border-right: 0px;
+}
+
+
+.message-list-pager {
+	text-align: center;
+	height: 30px;
+	padding-top: 10px;
+}
+.message-list-pager a {
+	border: 1px solid #aaa;
+	color: #666;
+	padding: 2px 8px;
+	border-radius: 3px;
+}
+.message-list-pager a:hover {
+	font-weight: bold;
+}
+
+
+.message-content {
+	margin-left: 280px;
+	height: 440px;
+}
+.message-content-main {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
+	height: 400px;
+	overflow: auto;
+}
+.message-content-main a {
+	color: #449d44;
+}
+a.message-bottom-btn {
+	background-color: #5cb85c;
+	color: white;
+	border-radius: 5px;
+	padding: 5px 15px;
+}
+a.message-bottom-btn:hover {
+	background-color: #449d44;
+}
+
+
+.message-html {
+	display: none;
+}
